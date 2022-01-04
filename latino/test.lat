@@ -1,0 +1,41 @@
+mientras (verdadero)
+  sis.dormir(0.02)
+
+  texto = archivo.leer("../io/entradas.txt")
+  si (texto != "") // Salir si no hay datos
+    partes = []
+    caracterNumero = 0
+    parteNumero = 0
+    mientras (verdadero) // Leer el texto
+      si (texto[caracterNumero] == nulo)
+        romper
+      fin
+
+      si (texto[caracterNumero] == ",")
+        parteNumero += 1
+      sino
+        si (partes[parteNumero] == "") // Parte nueva
+          partes[parteNumero] = ""
+        fin
+        partes[parteNumero] = partes[parteNumero]..texto[caracterNumero]
+      fin
+      caracterNumero += 1
+    fin
+
+    // Crear variables
+    encendido = partes[0] == "encendido"
+    distanciaIzquierdo = anumero(partes[1])
+    distanciaDerecho = anumero(partes[2])
+    angulo = anumero(partes[3])
+    porcentajeIzquierdo = 0.0
+    porecntajeDerecho = 0.0
+
+    // Operar el robot
+    porcentajeIzquierdo = angulo / 180
+    porecntajeDerecho = porcentajeIzquierdo
+
+    // Escribir las salidas
+    salidas = acadena(porcentajeIzquierdo)..","..acadena(porecntajeDerecho)
+    archivo.escribir("../io/salidas.txt", salidas)
+  fin
+fin
