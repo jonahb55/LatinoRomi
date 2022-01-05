@@ -1,3 +1,7 @@
+anguloMeta = 0.0
+ganancia = 0.008
+velocidadAdelante = 0.1
+
 mientras (verdadero)
   sis.dormir(0.02)
 
@@ -31,8 +35,12 @@ mientras (verdadero)
     porecntajeDerecho = 0.0
 
     // Operar el robot
-    porcentajeIzquierdo = angulo / 180
-    porecntajeDerecho = porcentajeIzquierdo
+    si (encendido)
+      anguloMeta += 1
+    fin
+    velocidad = (anguloMeta - angulo) * ganancia
+    porcentajeIzquierdo = velocidadAdelante + velocidad
+    porecntajeDerecho = velocidadAdelante + velocidad * -1
 
     // Escribir las salidas
     salidas = acadena(porcentajeIzquierdo)..","..acadena(porecntajeDerecho)
