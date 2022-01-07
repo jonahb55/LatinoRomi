@@ -38,7 +38,7 @@ mientras (verdadero)
     si (encendido)
       anguloMeta += 1
     sino
-      anguloMeta = angulo
+      anguloMeta = 0
     fin
     velocidad = (anguloMeta - angulo) * ganancia
     porcentajeIzquierdo = velocidadAdelante + velocidad
