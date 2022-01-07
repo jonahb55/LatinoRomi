@@ -4,17 +4,11 @@
 
 package frc.robot;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Scanner;
-
-import javax.xml.crypto.dsig.dom.DOMValidateContext;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -22,7 +16,6 @@ import edu.wpi.first.wpilibj.TimedRobot;
 public class Robot extends TimedRobot {
   private final TransmisionRomi transmision = new TransmisionRomi();
   private final GiroscopioRomi giroscopio = new GiroscopioRomi();
-  private Scanner salidas;
 
   @Override
   public void robotInit() {
