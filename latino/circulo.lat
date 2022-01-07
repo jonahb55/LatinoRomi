@@ -37,6 +37,8 @@ mientras (verdadero)
     // Operar el robot
     si (encendido)
       anguloMeta += 1
+    sino
+      anguloMeta = angulo
     fin
     velocidad = (anguloMeta - angulo) * ganancia
     porcentajeIzquierdo = velocidadAdelante + velocidad
