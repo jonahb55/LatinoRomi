@@ -24,7 +24,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotPeriodic() {
     String entradas = "";
-    entradas += DriverStation.getInstance().isEnabled() ? "encendido," : "apagado,";
+    entradas += DriverStation.isEnabled() ? "encendido," : "apagado,";
     entradas += Double.toString(transmision.conseguirDistanciaIzquierdoPulgadas()) + ",";
     entradas += Double.toString(transmision.conseguirDistanciaDerechoPulgadas()) + ",";
     entradas += Double.toString(giroscopio.conseguirAnguloZ());
